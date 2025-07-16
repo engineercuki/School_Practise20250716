@@ -31,7 +31,7 @@ jhgjhgjgjhgjg<br>
 內部非層文件連結導引:[顯示字樣]+(資料夾路徑\檔名)<br>
 [TXT ORDER TEST](Order.txt)
 
-照片/圖片:!+[顯示名稱]+(檔案位址)
+照片/圖片:!+[顯示名稱]+(檔案位址)<br>
 ![米格魯](beagletest.png)
 
 
