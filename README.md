@@ -25,6 +25,9 @@ jhgjhgjgjhgjg<br>
 
 [yahoo](http://tw.yahoo.com)
 
-內部同層文件連結導引:"[顯示字樣](檔名)"
+內部同層文件連結導引:[顯示字樣]+(檔名)
+[TXT ORDER TEST](Order.txt)
+
+內部非層文件連結導引:[顯示字樣]+(資料夾路徑\檔名)
 [TXT ORDER TEST](Order.txt)
 
