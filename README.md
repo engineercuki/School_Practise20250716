@@ -25,4 +25,4 @@ jhgjhgjgjhgjg<br>
 
 [yahoo](http://tw.yahoo.com)
 
-[TXT ORDER TEST](https://github.com/engineercuki/School_Practise20250716/blob/main/Order.txt)
+[TXT ORDER TEST](Order.txt)
