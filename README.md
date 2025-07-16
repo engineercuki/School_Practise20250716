@@ -1,27 +1,27 @@
-粗5
+粗5 1個#<br>
 # 會員登入系統
-粗4
+粗4 2個#<br>
 ## 會員登入系統
-粗3
+粗3 3個#<br>
 ### 會員登入系統
-粗2
+粗2 4個#<br>
 #### 會員登入系統
-粗1
+粗1 5個#<br>
 ##### 會員登入系統
-粗1灰字
+粗1灰字 6個#<br>
 ###### 會員登入系統
 
-斷行:
+斷行:<>+br<br>
 jghsadjgjgjhgjhgjgjhgjhgjhgjhggg<br>
 jgbjhggjgjgj
 
-分隔線:
+分隔線:<>+hr<br>
 <hr>
 
 jhgjhgjgjhgjg<br>
 
-外部網頁導引
-[google](http://www.google.com)
+外部網頁導引[]+顯示名稱+()網址<br>
+[http://www.google.com](http://www.google.com)
 
 [yahoo](http://tw.yahoo.com)
 
