@@ -32,6 +32,6 @@ jhgjhgjgjhgjg<br>
 [TXT ORDER TEST](Order.txt)
 
 照片/圖片:!+[顯示名稱]+(檔案位址)
-![米格魯](beagletest)
+![米格魯](beagletest.png)
 
 
