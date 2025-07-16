@@ -20,7 +20,7 @@ jgbjhggjgjgj
 
 jhgjhgjgjhgjg<br>
 
-外部網頁導引[]+顯示名稱+()網址<br>
+外部網頁導引[顯示名稱]+(網址)<br>
 [http://www.google.com](http://www.google.com)
 
 [yahoo](http://tw.yahoo.com)
