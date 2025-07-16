@@ -20,9 +20,11 @@ jgbjhggjgjgj
 
 jhgjhgjgjhgjg<br>
 
-
+外部網頁導引
 [google](http://www.google.com)
 
 [yahoo](http://tw.yahoo.com)
 
+內部同層文件連結導引:"[顯示字樣](檔名)"
 [TXT ORDER TEST](Order.txt)
+
