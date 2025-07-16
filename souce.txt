@@ -1,0 +1,163 @@
+//*****************按鈕功能區*******************
+		JButton clear = new JButton("重置");
+		clear.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				//訂購區跟訂單資訊歸零
+				ordering.setText("訂單摘要:");
+				output.setText("報名明細:");
+				name.setText("");
+				run5k.setText("0");
+				run10k.setText("0");
+				run21k.setText("0");
+				het.setText("0");
+				towel.setText("0");
+				doll.setText("0");
+				tshirts.setText("0");
+				tshirtm.setText("0");
+				tshirtl.setText("0");
+				tshirtxl.setText("0");
+				tshirt2xl.setText("0");
+				tshirt3xl.setText("0");
+			}
+		});
+		clear.setBounds(68, 517, 87, 23);
+		clear.setForeground(new Color(255, 0, 0));
+		clear.setFont(new Font("华文行楷", Font.PLAIN, 24));
+		BackgroundPanel.add(clear);
+		
+		JButton submit = new JButton("報名");
+		submit.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				//把報名跟加購與衣服尺寸數據送到訂單明細說明
+				String Name=name.getText();
+				int Run5k=Integer.parseInt(run5k.getText());
+				int Run10k=Integer.parseInt(run10k.getText());
+				int Run21k=Integer.parseInt(run21k.getText());
+				int Het=Integer.parseInt(het.getText());
+				int Towel=Integer.parseInt(towel.getText());
+				int Doll=Integer.parseInt(doll.getText());
+				int Tshirts=Integer.parseInt(tshirts.getText());
+				int Tshirtm=Integer.parseInt(tshirtm.getText());
+				int Tshirtl=Integer.parseInt(tshirtl.getText());
+				int Tshirtxl=Integer.parseInt(tshirtxl.getText());
+				int Tshirt2xl=Integer.parseInt(tshirt2xl.getText());
+				int Tshirt3xl=Integer.parseInt(tshirt3xl.getText());
+				
+				//訂購人不可以空白
+		        if (Name.isEmpty()) {
+		            output.setText(" 訂購代表人不可以空白!");
+		            return;
+		        }
+
+				//報名人數不可為負數
+				if(Run5k<0||Run10k<0||Run21k<0){
+					output.setText(" 報名人數不可以是負數!");
+					return;
+				}
+		
+				//報名總人數不可為0人
+				if(Run5k==0&&Run10k==0&&Run21k==0){
+					output.setText(" 報名總人數不可為0人!");
+					return;
+				}
+				
+				int runsum=Run5k+Run10k+Run21k;
+				int tshirtsum=Tshirts+Tshirtm+Tshirtl+Tshirtxl+Tshirt2xl+Tshirt3xl;
+				
+				//報名總人數與衣服總數需相符
+				if(runsum!=tshirtsum){
+					output.setText("報名人數與衣服選擇數量不相符!");
+					return;
+				}
+								 
+					Order o=new Order(Name,Run5k,Run10k,Run21k,Het,Towel,Doll,Tshirts,Tshirtm,Tshirtl,Tshirtxl,Tshirt2xl,Tshirt3xl);	
+					output.setText(o.show());
+					name.setText("");
+					run5k.setText("0");
+					run10k.setText("0");
+					run21k.setText("0");
+					het.setText("0");
+					towel.setText("0");
+					doll.setText("0");
+					tshirts.setText("0");
+					tshirtm.setText("0");
+					tshirtl.setText("0");
+					tshirtxl.setText("0");
+					tshirt2xl.setText("0");
+					tshirt3xl.setText("0");
+				}
+		});
+		submit.setBounds(274, 517, 87, 23);
+		submit.setForeground(new Color(0, 0, 255));
+		submit.setFont(new Font("微軟正黑體", Font.BOLD, 20));
+		BackgroundPanel.add(submit);
+		
+		JButton print = new JButton("列印");
+		print.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				//輸出output區的資料
+				try {
+		            boolean complete = output.print();  // 嘗試列印 output 內容
+		            if (complete) {
+		                ordering.setText("列印完成！");
+		            } else {
+		                ordering.setText(" 列印被取消。");
+		            }
+		        } catch (PrinterException pe) {
+		            ordering.setText("列印錯誤：" + pe.getMessage());
+		        }
+			}
+		});		
+		print.setBounds(672, 517, 87, 23);
+		print.setForeground(new Color(0, 0, 0));
+		print.setFont(new Font("微軟正黑體", Font.BOLD, 20));
+		BackgroundPanel.add(print);
+		
+		JButton exit = new JButton("關閉");
+		exit.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				//關閉訂購頁面
+				((Window) SwingUtilities.getWindowAncestor(exit)).dispose();
+			}
+		});
+		exit.setForeground(new Color(255, 0, 0));
+		exit.setFont(new Font("微軟正黑體", Font.BOLD, 20));
+		exit.setBounds(687, 10, 87, 23);
+		BackgroundPanel.add(exit);
+		
+		JButton Login = new JButton("登入");
+		Login.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		Login.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				//登入與登出切換
+				if (!isLoggedIn) {
+		            // 模擬登入邏輯（你也可以在這裡跳出登入對話框）
+		            isLoggedIn = true;
+		            Login.setText("登出");
+		            Login.setForeground(new Color(255, 0, 0)); // 紅色
+		            loginfo.setText("會員已登入");
+		            mbrnotice.setText("會員加購商品一律95折!"+"\n報名費2人以上同行打9折，5人以上同行打85折!");
+		            
+		        } else {
+		            // 模擬登出邏輯（清除登入狀態）
+		            isLoggedIn = false;
+		            Login.setText("登入");
+		            Login.setForeground(new Color(0,0,255)); // 藍色
+		            loginfo.setText("");
+		            mbrnotice.setText("");
+		        }
+
+			}
+		});
+		Login.setForeground(new Color(0, 0, 255));
+		Login.setFont(new Font("微軟正黑體", Font.BOLD, 20));
+		Login.setBounds(578, 10, 87, 23);
+		BackgroundPanel.add(Login);

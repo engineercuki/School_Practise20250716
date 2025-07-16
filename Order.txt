@@ -1,0 +1,308 @@
+
+public class Order {
+		
+		//field
+		String orderno;
+		String today;
+		String now;
+		String name;
+		int run5k;
+		int run10k;
+		int run21k;
+		int runpay;
+		int runsum;
+		int tshirts;
+		int tshirtm;
+		int tshirtl;
+		int tshirtxl;
+		int tshirt2xl;
+		int tshirt3xl;
+		int tshirtsum;
+		int het;
+		int towel;
+		int doll;
+		int extralpay;
+		int total;
+		private boolean isLoggedIn = false;
+		private String currentUser = null;
+		
+		//constructors
+		
+		public Order(String name,int run5k, int run10k,int run21k,int het,int towel,int doll,int tshirts,int tshirtm,int tshirtl,int tshirtxl,int tshirt2xl,int tshirt3xl) {
+
+			this.name=name;
+			this.run5k=run5k;
+			this.run10k=run10k;
+			this.run21k=run21k;
+			this.tshirts=tshirts;
+			this.tshirtm=tshirtm;
+			this.tshirtl=tshirtl;
+			this.tshirtxl=tshirtxl;
+			this.tshirt2xl=tshirt2xl;
+			this.tshirt3xl=tshirt3xl;
+			this.tshirtsum=tshirtsum;
+			this.het=het;
+			this.towel=towel;
+			this.doll=doll;
+
+			isLoggedIn = true;
+			runsum=run5k+run10k+run21k;
+			runpay=run5k*1280+run10k*1680+run21k*2025;
+			tshirtsum=tshirts+tshirtm+tshirtl+tshirtxl+tshirt2xl+tshirt3xl;
+			extralpay=het*1280+towel*790+doll*1680;
+			if (isLoggedIn) {
+			    // 加購區一律 95 折
+			    extralpay = (int)(extralpay * 0.95);
+
+			    // 報名人數折扣
+			    if (runsum >= 5) {
+			        runpay = (int)(runpay * 0.850);  // 85 折
+			    } else if (runsum >= 2) {
+			        runpay = (int)(runpay * 0.90);  // 9 折
+			    }
+			}
+
+			total=runpay+extralpay;
+		}
+		
+		
+		//methods
+		
+		public String getOrderno() {
+			return orderno;
+		}
+
+
+		public void setOrderno(String orderno) {
+			this.orderno = orderno;
+		}
+
+
+		public String getToday() {
+			return today;
+		}
+
+
+		public void setToday(String today) {
+			this.today = today;
+		}
+
+
+		public String getNow() {
+			return now;
+		}
+
+
+		public void setNow(String now) {
+			this.now = now;
+		}
+
+
+		public String getName() {
+			return name;
+		}
+
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+
+		public int getRun5k() {
+			return run5k;
+		}
+
+
+		public void setRun5k(int run5k) {
+			this.run5k = run5k;
+		}
+
+
+		public int getRun10k() {
+			return run10k;
+		}
+
+
+		public void setRun10k(int run10k) {
+			this.run10k = run10k;
+		}
+
+
+		public int getRun21k() {
+			return run21k;
+		}
+
+
+		public void setRun21k(int run21k) {
+			this.run21k = run21k;
+		}
+
+
+		public int getRunpay() {
+			return runpay;
+		}
+
+
+		public void setRunpay(int runpay) {
+			this.runpay = runpay;
+		}
+
+
+		public int getRunsum() {
+			return runsum;
+		}
+
+
+		public void setRunsum(int runsum) {
+			this.runsum = runsum;
+		}
+
+
+		public int getTshirts() {
+			return tshirts;
+		}
+
+
+		public void setTshirts(int tshirts) {
+			this.tshirts = tshirts;
+		}
+
+
+		public int getTshirtm() {
+			return tshirtm;
+		}
+
+
+		public void setTshirtm(int tshirtm) {
+			this.tshirtm = tshirtm;
+		}
+
+
+		public int getTshirtl() {
+			return tshirtl;
+		}
+
+
+		public void setTshirtl(int tshirtl) {
+			this.tshirtl = tshirtl;
+		}
+
+
+		public int getTshirtxl() {
+			return tshirtxl;
+		}
+
+
+		public void setTshirtxl(int tshirtxl) {
+			this.tshirtxl = tshirtxl;
+		}
+
+
+		public int getTshirt2xl() {
+			return tshirt2xl;
+		}
+
+
+		public void setTshirt2xl(int tshirt2xl) {
+			this.tshirt2xl = tshirt2xl;
+		}
+
+
+		public int getTshirt3xl() {
+			return tshirt3xl;
+		}
+
+
+		public void setTshirt3xl(int tshirt3xl) {
+			this.tshirt3xl = tshirt3xl;
+		}
+
+
+		public int getTshirtsum() {
+			return tshirtsum;
+		}
+
+
+		public void setTshirtsum(int tshirtsum) {
+			this.tshirtsum = tshirtsum;
+		}
+
+
+		public int getHet() {
+			return het;
+		}
+
+
+		public void setHet(int het) {
+			this.het = het;
+		}
+
+
+		public int getTowel() {
+			return towel;
+		}
+
+
+		public void setTowel(int towel) {
+			this.towel = towel;
+		}
+
+
+		public int getDoll() {
+			return doll;
+		}
+
+
+		public void setDoll(int doll) {
+			this.doll = doll;
+		}
+
+
+		public int getExtralpay() {
+			return extralpay;
+		}
+
+
+		public void setExtralpay(int extralpay) {
+			this.extralpay = extralpay;
+		}
+
+
+		public int getTotal() {
+			return total;
+		}
+
+
+		public void setTotal(int total) {
+			this.total = total;
+		}
+		
+		String show()
+		{
+			return "報名代表人:"+getName()+
+					"\n$1,280元體驗級 5 K人數："+getRun5k()+" 人"+
+					"\n$1,680元進階級10K人數："+getRun10k()+" 人"+
+					"\n$2,025元專業級21K人數："+getRun21k()+" 人"+
+					"\n報名人數：:"+getRunsum()+" 人"+
+					"\n報名費小計："+getRunpay()+" 元"+
+					"\n==================================="+
+					"\n加購聯名商品項目"+
+					"\n$1,280元聯名帽子："+getHet()+" 頂"+
+					"\n$   790元聯名毛巾："+getTowel()+" 條"+
+					"\n$1,980元聯名娃娃："+getDoll()+" 個"+
+					"\n加購商品小計：:"+getExtralpay()+" 元"+
+					"\n==================================="+
+					"\n應付總費用："+getTotal()+"元"+
+					"\n請務必於3天內完成匯款"+
+					"\n逾期視同放棄報名!"+
+					"\n==================================="+
+					"\n贈品-聯名T-shirt尺寸選擇："+
+					"\n　S碼："+getTshirts()+"件"+
+					"\t　M碼："+getTshirtm()+"件"+
+					"\n　L碼："+getTshirtl()+"件"+
+					"\t  XL碼："+getTshirtxl()+"件"+
+					"\n2XL碼："+getTshirt2xl()+"件"+
+					"\t3XL碼："+getTshirt3xl()+"件";
+		}
+		
+}
